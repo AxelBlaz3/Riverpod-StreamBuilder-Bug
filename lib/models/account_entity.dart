@@ -1,5 +1,5 @@
 import 'package:isar/isar.dart';
-import 'package:riverpod_streambuilder_bug/domain/models/account.dart';
+import 'package:riverpod_streambuilder_bug/models/account.dart';
 
 part 'account_entity.g.dart';
 

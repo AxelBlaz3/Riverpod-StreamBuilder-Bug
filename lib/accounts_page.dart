@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_streambuilder_bug/domain/models/account.dart';
-import 'package:riverpod_streambuilder_bug/features/accounts/accounts_view_model.dart';
+import 'package:riverpod_streambuilder_bug/models/account.dart';
+import 'package:riverpod_streambuilder_bug/providers.dart';
 
 class AccountsPage extends ConsumerWidget {
   const AccountsPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final accountsUiStateAsync = ref.watch(accountsProvider);
+    final accountsUiStateAsync = ref.watch(accountsListProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Accounts'),),
         body: accountsUiStateAsync.when(
-      data: (uiState) => AccountsStream(accountsStream: uiState.accountsStream),
+      data: (accountsStream) => AccountsStream(accountsStream: accountsStream),
       error: (error, stackTrace) => Text('$error, $stackTrace'),
       loading: () => const Center(
         child: CircularProgressIndicator(),

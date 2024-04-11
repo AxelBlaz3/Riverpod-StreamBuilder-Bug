@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_streambuilder_bug/router.dart';
+import 'package:riverpod_streambuilder_bug/home_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: MainApp()));
@@ -11,8 +11,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: router,
+    return const MaterialApp(
+      home: HomePage(),
     );
   }
 }
