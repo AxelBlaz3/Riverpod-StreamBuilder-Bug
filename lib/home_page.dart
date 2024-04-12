@@ -30,7 +30,9 @@ class HomePage extends ConsumerWidget {
             ),
             FilledButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => AccountsPage(),));
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const AccountsPage(),
+                ));
               },
               child: const Text('Go to accounts list'),
             ),
@@ -44,7 +46,7 @@ class HomePage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () async {
-            await ref.read(accountsListProvider.notifier).saveFakeAccounts();
+            await saveFakeAccounts();
           },
           label: const Text('Create fake accounts')),
     );
