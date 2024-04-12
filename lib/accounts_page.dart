@@ -6,27 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_streambuilder_bug/models/account.dart';
 import 'package:riverpod_streambuilder_bug/providers.dart';
 
-class AccountsPage extends ConsumerStatefulWidget {
+class AccountsPage extends StatelessWidget {
   const AccountsPage({super.key});
-
-  @override
-  ConsumerState<AccountsPage> createState() => _AccountsPageState();
-}
-
-class _AccountsPageState extends ConsumerState<AccountsPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    log('Accounts initState()');
-  }
-
-  @override
-  void dispose() {
-    log('Accounts dispose()');
-
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
